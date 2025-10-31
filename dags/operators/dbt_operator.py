@@ -55,14 +55,39 @@ class DbtOperator(BaseOperator):
             '--profiles-dir', self.dbt_root_dir,
         ]
         
+        if self.target:
+            command_args.extend(['--target', self.target])
         
-        command_args = [self.dbt_command]
+        if self.select:
+            command_args.extend(['--select', self.select])
+
         if self.full_refresh:
             command_args.append('--full-refresh')
+
+        if self.dbt_vars:
+            vars_string = ' '.join([f"{key}:{value}" for key, value in self.dbt_vars.items()])
+            command_args.extend(['--vars', vars_string])
         
-        result: dbtRunnerResult = dbtRunner().invoke(command_args)
+        self.log.info(f"Executing DBT command: {' '.join(command_args)}")
         
-        if result.success:
-            self.log.info(f"DBT command '{self.dbt_command}' executed successfully.")
+        res: dbtRunnerResult = dbtRunner().invoke(command_args)
+        
+        if res.success:
+            self.log.info(f"DBT command executed successfully.")
+
+            if res.result:
+                try:
+                    for r in res.result:
+                        if hasattr(r, 'error') and hasattr(r, 'status'):
+                            self.log.info(f"Node {r.node.get.name} : status {r.status}")
+                    
+                except TypeError:
+                    self.log.info("Command completed with result type : {type(res.result).__name__}")
+            else:
+                self.log.info("DBT command completed with no result.")
+        
         else:
-            raise AirflowException(f"DBT command '{self.dbt_command}' failed with errors: {result.error}")
+            self.log.error("DBT command failed.")
+            if res.exception:
+                self.log.error(f"Exception: {res.exception}")
+            raise AirflowException("DBT command execution failed: {' '.join(command_args)}")
