@@ -24,7 +24,7 @@ class DbtOperator(BaseOperator):
         self.runner = dbtRunner()
 
 
-    def execute(self, context: Context) -> Any :
+    def execute(self, context) :
         if not os.path.isdir(self.dbt_root_dir):
             raise AirflowException(f"DBT root directory '{self.dbt_root_dir}' does not exist or is not a directory.")
 
