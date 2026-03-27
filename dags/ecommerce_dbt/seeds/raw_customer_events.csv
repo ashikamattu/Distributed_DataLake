@@ -1,0 +1,101 @@
+event_id,customer_id,session_id,event_type,event_timestamp,page_url,product_id,category_id,referrer_source_id,device,user_agent,ip_address
+1,1058,sess_lzor8dz6,click,2025-01-05 17:00:00,/product/2,40,105,3,desktop,Mozilla/5.0 (Windows NT 10.0; Win64; x64),177.122.72.152
+2,1097,sess_ovi9zve5,page_view,2025-01-01 19:03:00,/product/17,41,103,5,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),56.89.103.32
+3,1018,sess_q1f2gwhu,search,2025-01-07 21:13:00,/product/40,44,105,2,desktop,Mozilla/5.0 (Linux; Android 12),160.164.174.52
+4,1035,sess_dypawx0o,add_to_cart,2025-01-03 16:29:00,/product/6,9,103,5,desktop,Mozilla/5.0 (Windows NT 10.0; Win64; x64),151.153.85.10
+5,1014,sess_ig68bmlt,search,2025-01-01 16:03:00,/product/5,23,103,4,tablet,Mozilla/5.0 (Windows NT 10.0; Win64; x64),254.94.104.4
+6,1043,sess_hxbdzenl,page_view,2025-01-03 14:51:00,/product/17,28,101,1,mobile,Mozilla/5.0 (Windows NT 10.0; Win64; x64),207.108.128.104
+7,1091,sess_jwrrh7th,page_view,2025-01-06 22:26:00,/product/22,33,101,3,desktop,Mozilla/5.0 (Linux; Android 12),168.228.19.49
+8,1100,sess_kadhyfp8,purchase,2025-01-06 04:14:00,/product/21,26,103,2,tablet,Mozilla/5.0 (Windows NT 10.0; Win64; x64),156.145.176.140
+9,1001,sess_rgue7kp6,page_view,2025-01-01 16:30:00,/product/27,10,103,3,desktop,Mozilla/5.0 (Linux; Android 12),135.159.196.160
+10,1042,sess_nybubv77,search,2025-01-07 13:33:00,/product/20,15,104,3,desktop,Mozilla/5.0 (Linux; Android 12),190.3.98.149
+11,1087,sess_ie0k9wtf,click,2025-01-05 21:51:00,/product/45,32,102,2,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),145.255.158.10
+12,1028,sess_1atu0dub,click,2025-01-05 15:44:00,/product/23,26,102,5,tablet,Mozilla/5.0 (Linux; Android 12),250.171.51.200
+13,1050,sess_8ed8gmj2,click,2025-01-04 09:28:00,/product/10,8,101,1,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),252.188.74.121
+14,1029,sess_1bzmfw9n,page_view,2025-01-01 03:03:00,/product/42,28,101,1,mobile,Mozilla/5.0 (Windows NT 10.0; Win64; x64),29.146.43.167
+15,1070,sess_wak1g6tq,purchase,2025-01-01 05:47:00,/product/17,46,102,4,tablet,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),16.217.51.178
+16,1071,sess_t0i5kbua,page_view,2025-01-07 14:08:00,/product/44,48,103,1,mobile,Mozilla/5.0 (Windows NT 10.0; Win64; x64),22.228.58.176
+17,1065,sess_k8o28bu6,purchase,2025-01-04 21:25:00,/product/42,47,103,4,tablet,Mozilla/5.0 (Linux; Android 12),89.246.79.84
+18,1088,sess_ylo27jfq,page_view,2025-01-01 14:08:00,/product/45,26,103,5,desktop,Mozilla/5.0 (Linux; Android 12),175.146.208.208
+19,1082,sess_kwnuto5s,click,2025-01-02 12:55:00,/product/17,5,103,3,desktop,Mozilla/5.0 (Linux; Android 12),112.224.119.54
+20,1069,sess_tbzqd0g7,purchase,2025-01-07 13:04:00,/product/44,28,105,5,desktop,Mozilla/5.0 (Windows NT 10.0; Win64; x64),236.172.95.197
+21,1057,sess_3869ajl6,purchase,2025-01-01 15:31:00,/product/14,38,104,5,tablet,Mozilla/5.0 (Windows NT 10.0; Win64; x64),132.63.53.247
+22,1054,sess_oxt2i2fq,add_to_cart,2025-01-05 16:01:00,/product/37,44,103,3,mobile,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),31.88.92.173
+23,1051,sess_5fcea7kf,purchase,2025-01-01 18:42:00,/product/23,7,105,1,mobile,Mozilla/5.0 (Linux; Android 12),202.247.51.69
+24,1098,sess_09feju6j,search,2025-01-07 09:02:00,/product/48,32,101,5,tablet,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),181.71.59.61
+25,1008,sess_xfmdhj2r,purchase,2025-01-05 09:44:00,/product/21,34,103,4,tablet,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),207.41.239.204
+26,1009,sess_fnckddyn,purchase,2025-01-02 05:50:00,/product/11,2,105,2,mobile,Mozilla/5.0 (Linux; Android 12),180.173.227.124
+27,1004,sess_b410ysvj,purchase,2025-01-03 18:19:00,/product/22,26,102,1,mobile,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),63.221.54.206
+28,1019,sess_qz3r6lwx,add_to_cart,2025-01-03 12:23:00,/product/14,32,105,1,desktop,Mozilla/5.0 (Windows NT 10.0; Win64; x64),212.234.254.85
+29,1049,sess_tvp17mx6,click,2025-01-02 07:01:00,/product/8,45,104,4,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),145.184.25.157
+30,1085,sess_f4d11836,search,2025-01-02 03:35:00,/product/23,49,105,5,tablet,Mozilla/5.0 (Linux; Android 12),108.245.255.9
+31,1001,sess_wwdt95a1,click,2025-01-06 02:44:00,/product/16,48,105,2,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),56.68.193.56
+32,1086,sess_1m4z28y8,page_view,2025-01-01 02:37:00,/product/26,36,104,2,desktop,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),136.20.69.24
+33,1014,sess_sxop0hb9,search,2025-01-07 10:00:00,/product/30,7,102,1,tablet,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),15.185.67.114
+34,1013,sess_22huinkh,search,2025-01-04 13:19:00,/product/41,15,104,5,desktop,Mozilla/5.0 (Windows NT 10.0; Win64; x64),186.55.12.67
+35,1052,sess_x0yd9ndi,purchase,2025-01-01 00:12:00,/product/9,3,105,1,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),241.111.210.242
+36,1009,sess_cb7k3g0e,purchase,2025-01-06 11:42:00,/product/27,16,102,3,tablet,Mozilla/5.0 (Linux; Android 12),73.4.86.89
+37,1077,sess_6odntx1i,search,2025-01-06 10:22:00,/product/31,3,104,5,tablet,Mozilla/5.0 (Windows NT 10.0; Win64; x64),193.102.77.190
+38,1025,sess_h1ighio6,click,2025-01-05 08:23:00,/product/42,40,105,1,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),146.190.60.80
+39,1033,sess_4l7jd9fa,click,2025-01-02 06:22:00,/product/12,25,104,3,desktop,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),169.98.117.93
+40,1026,sess_dseiz06t,add_to_cart,2025-01-06 12:26:00,/product/18,31,105,2,mobile,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),240.187.61.48
+41,1048,sess_8hlfda4u,add_to_cart,2025-01-06 12:46:00,/product/49,7,105,4,tablet,Mozilla/5.0 (Windows NT 10.0; Win64; x64),35.80.30.221
+42,1075,sess_vf627uc2,add_to_cart,2025-01-02 04:05:00,/product/17,43,101,3,mobile,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),244.130.12.64
+43,1065,sess_b8qk15i2,click,2025-01-03 18:40:00,/product/42,39,102,2,desktop,Mozilla/5.0 (Linux; Android 12),140.96.90.24
+44,1064,sess_poleg3gv,purchase,2025-01-01 08:32:00,/product/49,13,101,5,desktop,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),99.248.227.229
+45,1023,sess_32k1efaq,search,2025-01-01 10:33:00,/product/27,16,105,2,mobile,Mozilla/5.0 (Windows NT 10.0; Win64; x64),94.52.23.175
+46,1041,sess_nf1kuhzq,search,2025-01-07 12:51:00,/product/20,23,103,3,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),125.248.210.81
+47,1037,sess_v04w9bbo,purchase,2025-01-05 22:34:00,/product/42,34,104,5,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),224.232.199.87
+48,1097,sess_x5hakarl,search,2025-01-03 01:22:00,/product/41,50,102,5,tablet,Mozilla/5.0 (Linux; Android 12),80.36.93.100
+49,1095,sess_1nc1b9im,page_view,2025-01-04 15:31:00,/product/22,16,103,2,tablet,Mozilla/5.0 (Windows NT 10.0; Win64; x64),169.145.101.192
+50,1090,sess_659h5lh0,add_to_cart,2025-01-01 19:03:00,/product/3,35,105,5,desktop,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),13.120.135.151
+51,1029,sess_qy791vrt,search,2025-01-03 16:38:00,/product/20,40,101,5,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),4.174.199.55
+52,1072,sess_asb10ste,click,2025-01-01 09:26:00,/product/46,31,105,5,mobile,Mozilla/5.0 (Windows NT 10.0; Win64; x64),95.107.39.140
+53,1094,sess_inmk8ogk,add_to_cart,2025-01-01 06:49:00,/product/46,34,104,3,tablet,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),125.51.18.158
+54,1083,sess_eyosc69i,page_view,2025-01-01 09:59:00,/product/18,11,102,3,mobile,Mozilla/5.0 (Windows NT 10.0; Win64; x64),49.134.99.213
+55,1004,sess_p3pq0wqb,click,2025-01-02 03:51:00,/product/17,21,105,2,tablet,Mozilla/5.0 (Linux; Android 12),195.30.42.148
+56,1037,sess_pclgdb88,page_view,2025-01-03 05:52:00,/product/27,24,103,1,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),56.224.205.73
+57,1021,sess_8fhdh37c,click,2025-01-04 20:25:00,/product/7,15,101,3,desktop,Mozilla/5.0 (Linux; Android 12),53.128.49.92
+58,1076,sess_otwh2h0p,add_to_cart,2025-01-05 02:37:00,/product/39,13,105,4,mobile,Mozilla/5.0 (Linux; Android 12),215.219.152.155
+59,1056,sess_9rna849b,add_to_cart,2025-01-06 11:07:00,/product/15,13,105,1,mobile,Mozilla/5.0 (Windows NT 10.0; Win64; x64),149.95.241.144
+60,1053,sess_6wr3igym,add_to_cart,2025-01-03 08:16:00,/product/46,27,101,3,tablet,Mozilla/5.0 (Linux; Android 12),196.123.162.104
+61,1058,sess_xa28fhwa,click,2025-01-01 03:48:00,/product/50,36,102,5,mobile,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),236.181.192.45
+62,1030,sess_v1rm1htb,purchase,2025-01-07 01:45:00,/product/9,29,101,1,mobile,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),121.20.108.132
+63,1045,sess_r89htd77,page_view,2025-01-05 09:39:00,/product/29,43,104,4,tablet,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),118.255.96.86
+64,1078,sess_4w5eckdd,page_view,2025-01-03 21:24:00,/product/43,12,104,4,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),77.241.76.103
+65,1000,sess_pfyf74ct,add_to_cart,2025-01-03 04:03:00,/product/22,24,101,4,desktop,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),239.127.232.254
+66,1039,sess_jzq6zt09,purchase,2025-01-02 10:35:00,/product/32,33,101,1,tablet,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),195.210.185.169
+67,1056,sess_rrrfv1tt,search,2025-01-04 12:59:00,/product/24,34,103,5,mobile,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),60.149.147.142
+68,1062,sess_4d5jqjki,click,2025-01-07 12:24:00,/product/37,15,105,4,desktop,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),49.41.42.148
+69,1056,sess_75syp3zs,purchase,2025-01-05 14:42:00,/product/32,2,101,3,mobile,Mozilla/5.0 (Linux; Android 12),226.19.196.103
+70,1072,sess_t4j6edx0,add_to_cart,2025-01-04 05:00:00,/product/27,21,105,3,mobile,Mozilla/5.0 (Linux; Android 12),224.26.70.121
+71,1068,sess_zirjo3mz,add_to_cart,2025-01-04 15:34:00,/product/16,11,103,5,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),231.88.138.20
+72,1089,sess_qcrkfgw7,page_view,2025-01-04 14:08:00,/product/41,35,103,2,tablet,Mozilla/5.0 (Linux; Android 12),248.41.138.112
+73,1077,sess_8w10ymhu,purchase,2025-01-02 02:25:00,/product/48,45,102,3,mobile,Mozilla/5.0 (Linux; Android 12),169.45.181.174
+74,1005,sess_c8oczwsu,search,2025-01-06 06:57:00,/product/5,1,105,4,desktop,Mozilla/5.0 (Windows NT 10.0; Win64; x64),21.252.59.47
+75,1022,sess_6bs35eee,click,2025-01-03 08:09:00,/product/22,20,104,5,desktop,Mozilla/5.0 (Linux; Android 12),50.1.5.186
+76,1025,sess_43g9bj8g,page_view,2025-01-03 17:16:00,/product/47,43,101,4,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),59.51.8.205
+77,1036,sess_o8pc44oz,add_to_cart,2025-01-02 04:04:00,/product/16,24,104,3,tablet,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),68.16.83.57
+78,1011,sess_cjo93xbj,click,2025-01-04 18:35:00,/product/49,23,105,2,desktop,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),30.215.52.191
+79,1094,sess_uauz1v39,add_to_cart,2025-01-03 08:58:00,/product/24,21,103,5,mobile,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),207.217.206.99
+80,1027,sess_bjf40e3e,add_to_cart,2025-01-03 06:05:00,/product/3,26,103,5,mobile,Mozilla/5.0 (Windows NT 10.0; Win64; x64),151.141.23.104
+81,1064,sess_gytslgjk,purchase,2025-01-07 18:01:00,/product/12,43,103,5,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),84.246.104.16
+82,1044,sess_5girneny,add_to_cart,2025-01-04 20:24:00,/product/34,47,103,3,tablet,Mozilla/5.0 (Linux; Android 12),186.135.238.235
+83,1080,sess_5tfmw43a,add_to_cart,2025-01-01 05:53:00,/product/9,40,102,2,desktop,Mozilla/5.0 (Windows NT 10.0; Win64; x64),126.226.251.173
+84,1043,sess_dq72e2p9,page_view,2025-01-02 09:01:00,/product/22,36,103,4,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),100.25.236.124
+85,1002,sess_cvrllnss,purchase,2025-01-04 00:56:00,/product/13,50,101,2,desktop,Mozilla/5.0 (Linux; Android 12),245.151.227.59
+86,1085,sess_t4nbiidw,purchase,2025-01-01 18:15:00,/product/37,21,102,3,tablet,Mozilla/5.0 (Linux; Android 12),84.39.219.146
+87,1016,sess_5092zq74,click,2025-01-04 21:21:00,/product/15,35,102,3,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),38.144.96.45
+88,1097,sess_lmun4zzj,purchase,2025-01-05 00:04:00,/product/30,50,104,4,tablet,Mozilla/5.0 (Windows NT 10.0; Win64; x64),64.57.14.14
+89,1082,sess_ha4azhfv,search,2025-01-02 15:09:00,/product/17,25,101,4,tablet,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),216.74.8.144
+90,1048,sess_4xaqjutg,purchase,2025-01-03 23:40:00,/product/10,6,101,2,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),252.198.244.145
+91,1034,sess_qad0ywur,search,2025-01-04 02:02:00,/product/4,50,105,2,tablet,Mozilla/5.0 (Linux; Android 12),14.185.110.240
+92,1075,sess_qdew9f7d,click,2025-01-06 12:29:00,/product/28,7,104,3,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),59.26.254.52
+93,1003,sess_6o9nfeia,page_view,2025-01-02 02:26:00,/product/39,28,104,5,mobile,Mozilla/5.0 (Linux; Android 12),114.31.249.159
+94,1079,sess_fj78560h,add_to_cart,2025-01-05 02:59:00,/product/26,48,101,4,desktop,Mozilla/5.0 (Linux; Android 12),218.248.164.220
+95,1015,sess_0il4gq5o,search,2025-01-05 04:21:00,/product/41,17,103,4,tablet,Mozilla/5.0 (Windows NT 10.0; Win64; x64),14.109.203.218
+96,1025,sess_1ejemso3,purchase,2025-01-04 10:27:00,/product/22,15,102,4,tablet,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),49.187.89.142
+97,1023,sess_zrgsz8sl,search,2025-01-02 19:15:00,/product/4,47,102,4,desktop,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),40.197.128.175
+98,1000,sess_8u6ct8kn,search,2025-01-05 18:38:00,/product/32,27,103,5,desktop,Mozilla/5.0 (Linux; Android 12),90.50.111.19
+99,1060,sess_gip4ygma,page_view,2025-01-04 19:38:00,/product/28,8,101,5,mobile,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),109.229.102.82
+100,1064,sess_poomzmix,purchase,2025-01-04 13:27:00,/product/42,19,104,2,desktop,Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X),100.245.185.127
