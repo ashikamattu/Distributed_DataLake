@@ -46,7 +46,8 @@ services:
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
-      POSTGRES_DB: airflow
+      # POSTGRES_DB: airflow
+      POSTGRES_MULTIPLE_DATABASES: airflow,nessiedb
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
@@ -65,8 +66,9 @@ services:
     environment:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
+      MINIO_REGION: us-east-1
     volumes:
-      - minio_data:/data
+      - ./minio_data:/data
     command: server /data --console-address ":9001"
 
   nessie:
@@ -77,31 +79,31 @@ services:
     ports:
       - "19120:19120"
     environment:
-      - QUARKUS_HTTP_PORT=19120
-      - NESSIE_VERSION_STORE_TYPE: JDBI
-      - NESSIE_JDBC_KIND: postgres
-      - NESSIE_JDBC_URL: jdbc:postgresql://postgres:5432/nessiedb
-      - NESSIE_JDBC_USERNAME: nessie
-      - NESSIE_JDBC_PASSWORD: nessie
+      QUARKUS_HTTP_PORT: 19120
+      NESSIE_VERSION_STORE_TYPE: jdbc
+      NESSIE_JDBC_KIND: postgres
+      NESSIE_JDBC_URL: jdbc:postgresql://postgres:5432/nessiedb
+      NESSIE_JDBC_USERNAME: nessie
+      NESSIE_JDBC_PASSWORD: nessie
   
   trino-coordinator:
     image: trinodb/trino:latest
     container_name: trino-coordinator
     volumes:
       - ./trino/coordinator/etc:/etc/trino
+      # - ./trino/catalog:/etc/trino/catalog
     ports:
-      - "8080:8080"
+      - "9080:9080"
     depends_on:
-      - trino-worker
+      - trino-worker-1
 
   trino-worker-1:
     image: trinodb/trino:latest
     container_name: trino-worker-1
     volumes:
-      - ./trino/worker/config.properties:/etc/trino/config.properties
-      - ./trino/catalog:/etc/trino/catalog
-    depends_on:
-      - trino-coordinator
+      # - ./trino/worker/config.properties:/etc/trino/config.properties
+      # - ./trino/catalog:/etc/trino/catalog
+      - ./trino/worker/etc:/etc/trino
   
   # trino-worker-2:
   #   image: trinodb/trino:latest

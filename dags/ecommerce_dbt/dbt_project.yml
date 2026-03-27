@@ -1,3 +1,7 @@
+name: datalakehouse
+
+profile: ecommerce_dbt
+
 seeds:
   ecommerce_dbt:
     schema: bronze

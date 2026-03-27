@@ -9,4 +9,4 @@ ecommerce_dbt:
       port: 8080
       schema: bronze
       threads: 1
-    target: trino
+  target: trino

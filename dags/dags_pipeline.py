@@ -55,11 +55,13 @@ def dags_pipeline():
             from sqlalchemy import create_engine
             from sqlalchemy import text
 
-            engine = create_engine('trino:://trino@trino-coordinator:8080/iceberg/bronze')
+            engine = create_engine('trino://trino@trino-coordinator:8080/iceberg/bronze')
+            logger.info("Engine created")
 
             with engine.connect() as connection:
                 result = connection.execute(text("SELECT count(*) as cnt FROM raw_customer_events"))
                 bronze_count = result.scalar()
+                logger.info(f"bronze row count- raw customer - {bronze_count}")
 
                 if bronze_count and bronze_count > 0:
                     logger.info(f"Bronze already seeded with {bronze_count} rows, skipping seeding")
@@ -74,15 +76,16 @@ def dags_pipeline():
         except Exception as e:
             logger.info(f"Tables do not exist or error occurred: {e}, proceeding with seeding")
         
-        operator = DbtOperator(
-            task_id = "seed_bronze_data_internal",
-            dbt_root_dir = DBT_ROOT_DIR,
-            dbt_command = "seed",
-            full_refresh = True
-        )
-
         try:
-            operator.execute(context={})
+            operator = DbtOperator(
+                task_id = "seed_bronze_data_internal",
+                dbt_root_dir = DBT_ROOT_DIR,
+                dbt_command = "seed",
+                full_refresh = True
+            )
+
+      
+            #operator.execute(context={})
             return {
                 'status': 'success',
                 'layer': 'bronze_seed',
@@ -112,14 +115,14 @@ def dags_pipeline():
         
         logger.info("Transforming bronze layer...")
 
-        operator = DbtOperator(
-            task_id = "transform_bronze_layer_internal",
-            dbt_root_dir = DBT_ROOT_DIR,
-            dbt_command = "run --select tag:bronze"
-        )
-
         try:
-            operator.execute(context={})
+            operator = DbtOperator(
+                task_id = "transform_bronze_layer_internal",
+                dbt_root_dir = DBT_ROOT_DIR,
+                dbt_command = "run --select tag:bronze"
+            )
+
+            # operator.execute(context={})
             return {
                 'status': 'success',
                 'layer': 'bronze_transform',
