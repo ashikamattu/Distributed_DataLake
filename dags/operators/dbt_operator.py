@@ -3,91 +3,110 @@ from airflow.exceptions import AirflowException
 from dbt.cli.main import dbtRunner, dbtRunnerResult
 import os
 
+
 class DbtOperator(BaseOperator):
-    def __init__(self, 
-                 dbt_root_dir: str, 
-                 dbt_command: str,
-                 target:str = None, 
-                 select: str = None,
-                 dbt_vars:dict = None,
-                 full_refresh: bool = False, 
-                 **kwargs):
-        
+    def __init__(
+        self,
+        dbt_root_dir: str,
+        dbt_command: str,
+        target: str = None,
+        select: str = None,
+        dbt_vars: dict = None,
+        full_refresh: bool = False,
+        **kwargs,
+    ):
         super().__init__(**kwargs)
-        
+
         self.dbt_root_dir = dbt_root_dir
         self.dbt_command = dbt_command
         self.target = target
         self.select = select
         self.dbt_vars = dbt_vars
         self.full_refresh = full_refresh
-        self.runner = dbtRunner()
+        self.runner = dbtRunner()  # ✅ reused in execute()
 
-
-    def execute(self, context) :
+    def execute(self, context) -> dict:
+        # ── Validate project dir ──────────────────────────────────────────────
         if not os.path.isdir(self.dbt_root_dir):
-            raise AirflowException(f"DBT root directory '{self.dbt_root_dir}' does not exist or is not a directory.")
+            raise AirflowException(
+                f"DBT root directory '{self.dbt_root_dir}' does not exist or is not a directory."
+            )
 
-        logs_dir = os.path.join(self.dbt_root_dir, 'logs')
-        os.makedirs(logs_dir, exist_ok=True)
-        if not os.path.exists(logs_dir):
-            try:
-                os.makedirs(logs_dir, mode=0o777)
-                self.log.inofo(f"Created logs directory at {logs_dir}")
-            except Exception as e:
-                self.log.error(f"Failed to create logs directory at {logs_dir}: {e}")
-                raise AirflowException(f"Failed to create logs directory at {logs_dir}: {e}")
+        # ── Ensure logs dir exists with write permissions ─────────────────────
+        logs_dir = os.path.join(self.dbt_root_dir, "logs")
+        try:
+            # ✅ single call — exist_ok avoids redundant existence check
+            os.makedirs(logs_dir, mode=0o777, exist_ok=True)
+            self.log.info(f"Logs directory ready at {logs_dir}")
+        except Exception as e:
+            self.log.error(f"Failed to create logs directory at {logs_dir}: {e}")
+            raise AirflowException(f"Failed to create logs directory at {logs_dir}: {e}")
+
         if not os.access(logs_dir, os.W_OK):
             try:
                 os.chmod(logs_dir, 0o777)
                 self.log.info(f"Set write permissions for logs directory at {logs_dir}")
             except Exception as e:
                 self.log.error(f"Failed to set write permissions for logs directory at {logs_dir}: {e}")
-                raise AirflowException(f"Failed to set write permissions for logs directory at {logs_dir}: {e}")
-        
-        if isinstance(self.dbt_command, str):
-            command_parts = self.dbt_command.split()
-        else:
-            command_parts = [self.dbt_command]
-        
+                raise AirflowException(
+                    f"Failed to set write permissions for logs directory at {logs_dir}: {e}"
+                )
+
+        # ── Build command args ────────────────────────────────────────────────
+        command_parts = self.dbt_command.split() if isinstance(self.dbt_command, str) else [self.dbt_command]
+
         command_args = command_parts + [
-            '--project-dir', self.dbt_root_dir,
-            '--profiles-dir', self.dbt_root_dir,
+            "--project-dir", self.dbt_root_dir,
+            "--profiles-dir", self.dbt_root_dir,
         ]
-        
+
         if self.target:
-            command_args.extend(['--target', self.target])
-        
+            command_args.extend(["--target", self.target])
+
         if self.select:
-            command_args.extend(['--select', self.select])
+            command_args.extend(["--select", self.select])
 
         if self.full_refresh:
-            command_args.append('--full-refresh')
+            command_args.append("--full-refresh")
 
         if self.dbt_vars:
-            vars_string = ' '.join([f"{key}:{value}" for key, value in self.dbt_vars.items()])
-            command_args.extend(['--vars', vars_string])
-        
+            # ✅ proper YAML-style vars string for dbt
+            vars_string = "{" + ", ".join(f"{k}: {v}" for k, v in self.dbt_vars.items()) + "}"
+            command_args.extend(["--vars", vars_string])
+
         self.log.info(f"Executing DBT command: {' '.join(command_args)}")
-        
-        res: dbtRunnerResult = dbtRunner().invoke(command_args)
-        
+
+        # ── Invoke via stored runner ──────────────────────────────────────────
+        res: dbtRunnerResult = self.runner.invoke(command_args)  # ✅ uses self.runner
+
+        # ── Handle result ─────────────────────────────────────────────────────
+        node_results = []
+
         if res.success:
-            self.log.info(f"DBT command executed successfully.")
+            self.log.info("DBT command executed successfully.")
 
             if res.result:
                 try:
                     for r in res.result:
-                        if hasattr(r, 'error') and hasattr(r, 'status'):
-                            self.log.info(f"Node {r.node.get.name} : status {r.status}")
-                    
+                        if hasattr(r, "status") and hasattr(r, "node"):
+                            node_name = r.node.name  # ✅ fixed — .get.name → .name
+                            self.log.info(f"Node {node_name}: status {r.status}")
+                            node_results.append({"node": node_name, "status": str(r.status)})
                 except TypeError:
-                    self.log.info("Command completed with result type : {type(res.result).__name__}")
+                    self.log.info(f"Command completed with result type: {type(res.result).__name__}")
             else:
                 self.log.info("DBT command completed with no result.")
-        
+
         else:
             self.log.error("DBT command failed.")
             if res.exception:
                 self.log.error(f"Exception: {res.exception}")
-            raise AirflowException("DBT command execution failed: {' '.join(command_args)}")
+            # ✅ f-string prefix added
+            raise AirflowException(f"DBT command execution failed: {' '.join(command_args)}")
+
+        # ── Return result dict for XCom ───────────────────────────────────────
+        return {
+            "command": " ".join(command_args),
+            "node_results": node_results,
+            "success": res.success,
+        }
